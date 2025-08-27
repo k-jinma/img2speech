@@ -1,0 +1,52 @@
+画像文字認識・音声読み上げアプリ インストール手順
+==================================================
+
+【必要な環境】
+- Windows 10/11
+- Python 3.7以上
+- インターネット接続（初回起動時のみ）
+
+【簡単インストール（推奨）】
+1. setup.bat をダブルクリックして実行
+2. 自動的にセットアップが完了します
+3. run.bat をダブルクリックしてアプリを起動
+
+【手動インストール】
+1. Python 3.7以上をインストール
+   https://www.python.org/downloads/
+
+2. コマンドプロンプトを開き、このフォルダに移動
+
+3. 仮想環境を作成
+   python -m venv .venv
+
+4. 仮想環境をアクティベート
+   .venv\Scripts\activate.bat
+
+5. 依存関係をインストール
+   pip install -r requirements.txt
+
+6. アプリケーションを起動
+   python image_to_speech_app.py
+
+【トラブルシューティング】
+
+PowerShell実行ポリシーエラーが発生した場合：
+1. PowerShellを管理者として実行
+2. 以下のコマンドを実行：
+   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+初回起動時に時間がかかる場合：
+- EasyOCRの日本語モデルをダウンロード中です
+- 数分程度お待ちください
+
+【ファイル構成】
+- image_to_speech_app.py : メインアプリケーション
+- requirements.txt : 必要なライブラリ一覧
+- setup.bat : 自動セットアップスクリプト
+- run.bat : アプリケーション起動スクリプト
+- README.md : 詳細な使用方法
+- models/ : EasyOCRモデルファイル（自動生成）
+
+【サポート】
+問題が発生した場合は、README.mdのトラブルシューティングを参照してください。

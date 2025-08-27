@@ -21,15 +21,45 @@ EasyOCRとpyttsx3を使用した画像から文字を認識し、テキストを
 
 ## セットアップ手順
 
-### 1. 依存関係のインストール
+### 簡単インストール（推奨）
+
+1. **配布パッケージの展開**
+   - 配布ファイルを任意のフォルダに展開
+
+2. **自動セットアップ**
+   - `setup.bat` をダブルクリックして実行
+   - 自動的にPython環境確認、仮想環境作成、依存関係インストールが実行されます
+
+3. **アプリケーション起動**
+   - `run.bat` をダブルクリックしてアプリケーションを起動
+
+### 手動インストール
+
+#### 1. 依存関係のインストール
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. アプリケーションの実行
+#### 2. アプリケーションの実行
 
 ```bash
+python image_to_speech_app.py
+```
+
+### 開発者向けセットアップ
+
+```bash
+# 仮想環境の作成
+python -m venv .venv
+
+# 仮想環境のアクティベート
+.venv\Scripts\activate.bat
+
+# 依存関係のインストール
+pip install -r requirements.txt
+
+# アプリケーションの実行
 python image_to_speech_app.py
 ```
 
@@ -114,6 +144,28 @@ python image_to_speech_app.py
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
+## 配布ファイル構成
+
+### 必須ファイル
+- **`image_to_speech_app.py`** - メインアプリケーション
+- **`requirements.txt`** - 必要なPythonライブラリ一覧
+- **`setup.bat`** - 自動セットアップスクリプト
+- **`run.bat`** - アプリケーション起動スクリプト
+- **`README.md`** - このファイル（詳細な使用方法）
+- **`INSTALL.txt`** - インストール手順の詳細
+
+### オプションファイル
+- **`DISTRIBUTION_FILES.txt`** - 配布ファイルの一覧と注意事項
+
+### 配布不要ファイル
+- **`.venv/`** - 仮想環境（ユーザー環境で自動生成）
+- **`.git/`** - バージョン管理用（配布不要）
+- **`models/`** - EasyOCRモデル（初回起動時に自動ダウンロード）
+
+### 配布サイズ
+- **配布パッケージ**: 約30KB
+- **初回起動時のダウンロード**: 約100MB（EasyOCRモデル）
+
 ## 技術仕様
 
 ### 使用ライブラリ
@@ -134,6 +186,13 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 このプロジェクトはMITライセンスの下で公開されています。
 
 ## 更新履歴
+
+### v2.1.0
+- 配布用ファイルの追加
+- 自動セットアップスクリプト（setup.bat）の実装
+- アプリケーション起動スクリプト（run.bat）の実装
+- インストール手順の詳細化（INSTALL.txt）
+- 配布ファイル構成の整理
 
 ### v2.0.0
 - 日本語認識の大幅な精度向上
