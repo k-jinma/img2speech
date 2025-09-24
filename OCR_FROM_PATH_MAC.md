@@ -90,7 +90,7 @@ IMAGE_PATH = "/Users/あなたの名前/Pictures/sample.png"
 ## 6. 実行
 
 ```bash
-python ocr_from_path.py
+python3 ocr_from_path.py
 ```
 
 - 認識できた文字列が1行ずつ表示されます。
