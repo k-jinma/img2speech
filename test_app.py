@@ -54,8 +54,15 @@ def test_easyocr():
     
     try:
         import easyocr
-        reader = easyocr.Reader(['ja', 'en'])
-        print("✓ EasyOCR初期化成功")
+        # ネットワークに依存しない初期化（ローカル models を使用）
+        reader = easyocr.Reader(
+            ['ja'],
+            gpu=False,
+            model_storage_directory='./models',
+            download_enabled=False,
+            recog_network='japanese_g2'
+        )
+        print("✓ EasyOCR初期化成功（ローカルモデル使用）")
         return True
     except Exception as e:
         print(f"✗ EasyOCR初期化失敗: {e}")

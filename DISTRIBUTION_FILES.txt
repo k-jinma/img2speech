@@ -4,10 +4,6 @@
 【必須ファイル】
 ✓ image_to_speech_app.py     - メインアプリケーション
 ✓ requirements.txt           - 依存関係ライブラリ一覧
-✓ setup.bat                 - 自動セットアップスクリプト
-✓ run.bat                   - アプリケーション起動スクリプト
-✓ README.md                 - 詳細な使用方法とドキュメント
-✓ INSTALL.txt               - インストール手順
 
 【オプションファイル】
 - models/                    - EasyOCRモデルファイル（初回起動時に自動ダウンロード）
@@ -24,19 +20,4 @@
 画像文字認識アプリ/
 ├── image_to_speech_app.py
 ├── requirements.txt
-├── setup.bat
-├── run.bat
-├── README.md
-├── INSTALL.txt
 └── このファイル.txt
-
-【ユーザー向けセットアップ手順】
-1. 配布パッケージを任意のフォルダに展開
-2. setup.bat をダブルクリックしてセットアップ実行
-3. run.bat をダブルクリックしてアプリケーション起動
-
-【ファイルサイズ目安】
-- アプリケーションファイル: ~22KB
-- ドキュメント: ~5KB
-- 合計配布サイズ: ~30KB
-- 初回起動時のダウンロード: ~100MB（EasyOCRモデル）

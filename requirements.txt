@@ -1,6 +1,21 @@
+# Python 3.13 互換の依存関係
+# EasyOCR は内部で PyTorch を使用します。Python 3.13 では PyTorch 2.5+ の
+# cp313 ホイールが必要なため、torch を明示的に指定します。
 easyocr==1.7.2
-pyttsx3==2.99
-opencv-python==4.12.0.88
-Pillow==11.3.0
-# NumPy 2.2.xはPython>=3.10必須。opencv-python(>=4.12)要件に合わせPython 3.9で使える2.0系に固定。
-numpy==2.0.2
+# Python 3.13 では PyTorch 2.6+ の cp313 ホイールを使用
+torch>=2.6,<3.0; python_version >= "3.13"
+torchvision>=0.21,<0.24; python_version >= "3.13"
+
+# 画像処理関連
+opencv-python>=4.12.0.88
+Pillow>=11.0.0,<12
+
+# NumPy は Python バージョンに応じて分岐
+numpy>=2.2.0,<3; python_version >= "3.10"
+numpy==2.0.2; python_version < "3.10"
+
+# 音声読み上げ
+pyttsx3>=2.90,<3.0
+
+# macOS の pyttsx3 で NSSpeechSynthesizer を使うために必要
+pyobjc>=10.3; sys_platform == "darwin"
